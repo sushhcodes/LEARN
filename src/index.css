@@ -1,0 +1,512 @@
+
+/* ==============================
+   GLOBAL THEME
+================================ */
+:root {
+  --text: #334155;
+  --text-h: #102a43;
+  --bg: #f1f5f9;
+  --border: #dbe4ee;
+  --code-bg: #e8eef5;
+
+  --accent: #059669;
+  --accent-hover: #047857;
+  --accent-bg: #d1fae5;
+  --accent-border: #34d399;
+
+  --white: #ffffff;
+  --muted: #64748b;
+  --danger: #dc2626;
+
+  --shadow: 0 10px 30px rgba(15, 40, 65, 0.09);
+
+  --sans: 'Segoe UI', Roboto, sans-serif;
+  --heading: 'Manrope', 'Segoe UI', sans-serif;
+  --mono: ui-monospace, Consolas, monospace;
+
+  font: 16px/145% var(--sans);
+  letter-spacing: 0.18px;
+  color: var(--text);
+  background: var(--bg);
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  background: var(--bg);
+}
+
+/* ==============================
+   ROOT
+================================ */
+#root {
+  width: 100%;
+  max-width: 1440px;
+  min-height: 100vh;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+
+/* ==============================
+   HEADINGS
+================================ */
+h1, h2, h3 {
+  font-family: var(--heading);
+  font-weight: 800;
+  color: var(--text-h);
+}
+
+h1 {
+  font-size: 34px;
+  letter-spacing: -1px;
+  margin: 0;
+}
+
+h2 {
+  font-size: 24px;
+  margin: 0 0 8px;
+}
+
+h3 {
+  font-size: 19px;
+}
+
+p {
+  margin: 0;
+  line-height: 1.6;
+}
+
+/* ==============================
+   BUTTONS
+================================ */
+button {
+  border: 0;
+  border-radius: 9px;
+  padding: 11px 18px;
+  background: var(--accent);
+  color: white;
+  font-family: var(--sans);
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+button:hover {
+  background: var(--accent-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(5, 150, 105, 0.2);
+}
+
+button:focus-visible {
+  outline: 3px solid var(--accent-border);
+  outline-offset: 3px;
+}
+
+.delete-button {
+  margin-left: 14px;
+  color: var(--danger);
+  background: transparent;
+}
+
+.delete-button:hover {
+  background: #fee2e2;
+  color: #b91c1c;
+}
+
+.secondary-button {
+  background: white;
+  color: #102a43;
+  border: 1px solid var(--border);
+}
+
+.secondary-button:hover {
+  background: #e2e8f0;
+  color: #102a43;
+}
+
+/* ==============================
+   NAVBAR
+================================ */
+.navbar {
+  min-height: 76px;
+  padding: 16px 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+  background: #102a43;
+  border-bottom: 3px solid #059669;
+  box-shadow: 0 5px 20px rgba(15, 40, 65, 0.12);
+}
+
+.navbar nav {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.navbar nav a {
+  color: #dbeafe;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.navbar nav a:hover {
+  color: #34d399;
+}
+
+.brand {
+  font: 800 23px var(--heading);
+  color: #34d399;
+  letter-spacing: -0.7px;
+}
+
+.nav-button {
+  padding: 10px 16px;
+  background: #059669;
+  color: white;
+}
+
+.nav-button:hover {
+  background: #047857;
+}
+
+/* ==============================
+   MAIN PAGE
+================================ */
+.page {
+  width: min(1050px, calc(100% - 40px));
+  margin: 52px auto;
+}
+
+/* ==============================
+   WELCOME CARD
+================================ */
+.welcome-card {
+  padding: clamp(30px, 6vw, 66px);
+  border-radius: 20px;
+  color: white;
+  background: linear-gradient(
+    120deg,
+    #102a43,
+    #075985,
+    #059669
+  );
+  box-shadow: 0 15px 35px rgba(16, 42, 67, 0.18);
+  position: relative;
+  overflow: hidden;
+}
+
+.welcome-card h1 {
+  max-width: 620px;
+  color: white;
+  font-size: clamp(30px, 5vw, 46px);
+  letter-spacing: -1.6px;
+}
+
+.eyebrow {
+  margin: 0 0 12px;
+  color: #34d399;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 1.8px;
+}
+
+.intro {
+  color: var(--muted);
+  line-height: 1.7;
+}
+
+.welcome-card .intro {
+  max-width: 490px;
+  color: #dbeafe;
+}
+
+/* ==============================
+   HOME ACTIONS
+================================ */
+.home-actions {
+  display: flex;
+  gap: 12px;
+  margin-top: 27px;
+}
+
+.home-actions button {
+  padding: 12px 20px;
+}
+
+.welcome-card .secondary-button {
+  background: white;
+  color: #102a43;
+  border: 1px solid white;
+}
+
+.welcome-card .secondary-button:hover {
+  background: #d1fae5;
+}
+
+/* ==============================
+   SUMMARY CARD
+================================ */
+.summary-card {
+  width: 240px;
+  margin-top: 22px;
+  padding: 23px;
+  border-radius: 15px;
+  background: white;
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow);
+  transition: all 0.3s ease;
+}
+
+.summary-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 30px rgba(5, 150, 105, 0.12);
+}
+
+.summary-label {
+  display: block;
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.summary-card strong {
+  display: block;
+  margin-top: 8px;
+  color: var(--accent);
+  font: 800 32px var(--heading);
+}
+
+/* ==============================
+   PAGE HEADING
+================================ */
+.page-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 28px;
+}
+
+.page-heading h1,
+.form-page h1 {
+  font-size: 34px;
+  color: var(--text-h);
+}
+
+.page-heading .intro,
+.form-page .intro {
+  margin-bottom: 0;
+}
+
+/* ==============================
+   FORM PAGE
+================================ */
+.form-page {
+  max-width: 660px;
+  padding: 36px;
+  margin: 0 auto;
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  background: white;
+  box-shadow: var(--shadow);
+}
+
+.student-form {
+  display: grid;
+  gap: 19px;
+  margin-top: 28px;
+}
+
+.student-form label {
+  display: grid;
+  gap: 8px;
+  color: #334155;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.student-form input,
+.student-form select {
+  width: 100%;
+  padding: 13px 14px;
+  color: #102a43;
+  border: 1px solid var(--border);
+  border-radius: 9px;
+  outline: none;
+  background: #f8fafc;
+  font-family: var(--sans);
+  font-size: 14px;
+  transition: all 0.3s ease;
+}
+
+.student-form input:focus,
+.student-form select:focus {
+  border-color: var(--accent);
+  background: white;
+  box-shadow: 0 0 0 4px rgba(5, 150, 105, 0.12);
+}
+
+/* ==============================
+   FORM ACTIONS
+================================ */
+.form-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 8px;
+}
+
+/* ==============================
+   TABLE
+================================ */
+.table-wrap {
+  overflow-x: auto;
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  background: white;
+  box-shadow: var(--shadow);
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+  font-size: 14px;
+}
+
+th, td {
+  padding: 16px 18px;
+  border-bottom: 1px solid var(--border);
+}
+
+th {
+  color: white;
+  background: #102a43;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.7px;
+}
+
+tbody tr {
+  transition: background 0.2s ease;
+}
+
+tbody tr:hover {
+  background: #ecfdf5;
+}
+
+tbody tr:last-child td {
+  border-bottom: 0;
+}
+
+.actions {
+  white-space: nowrap;
+}
+
+.text-button {
+  padding: 0;
+  background: transparent;
+  color: var(--accent);
+  font-weight: 700;
+}
+
+.text-button:hover {
+  background: transparent;
+  color: #047857;
+  box-shadow: none;
+}
+
+/* ==============================
+   EMPTY STATE
+================================ */
+.empty-state {
+  padding: 38px;
+  text-align: center;
+  color: var(--muted);
+  border: 2px dashed #a7f3d0;
+  border-radius: 13px;
+  background: #ecfdf5;
+}
+
+/* ==============================
+   CODE AND COUNTER
+================================ */
+code,
+.counter {
+  font-family: var(--mono);
+}
+
+/* ==============================
+   RESPONSIVE DESIGN
+================================ */
+@media (max-width: 1024px) {
+  .page {
+    width: min(95%, 1050px);
+  }
+}
+
+@media (max-width: 600px) {
+  .navbar {
+    height: auto;
+    min-height: 70px;
+    padding: 16px 20px;
+    gap: 15px;
+    flex-wrap: wrap;
+  }
+
+  .navbar nav {
+    gap: 15px;
+    font-size: 13px;
+    flex-wrap: wrap;
+  }
+
+  .nav-button {
+    padding: 9px 11px;
+  }
+
+  .page {
+    margin: 30px auto;
+  }
+
+  .page-heading {
+    align-items: flex-start;
+    gap: 18px;
+    flex-direction: column;
+  }
+
+  .form-page {
+    padding: 24px 18px;
+  }
+
+  .home-actions {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .summary-card {
+    width: 100%;
+  }
+
+  h1 {
+    font-size: 28px;
+  }
+
+  th, td {
+    padding: 12px;
+  }
+}
